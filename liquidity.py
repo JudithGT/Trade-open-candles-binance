@@ -157,8 +157,8 @@ def check_best_trade(interval=Intervals.DAY):
             cc_wick = round((diff / cc_close) * 100, 2)
             best_bullish_wicks.append({ 'wick': cc_wick, 'symbol': item['symbol'] })
         else: # Candle is red
-            diff = cc_close - cc_low
-            cc_wick = -round((diff / cc_low) * 100, 2)
+            diff = cc_low - cc_close
+            cc_wick = -round((diff / cc_close) * 100, 2)
             best_bearish_wicks.append({ 'wick': cc_wick, 'symbol': item['symbol'] })
             
 
